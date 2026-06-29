@@ -105,7 +105,7 @@ function cerrarLogout(){
 }
 
 function confirmarLogout(){
-    fetch("https://blacheres-app.onrender.com/logout.php", {
+    fetch("https://sistemas-tickets.onrender.com/logout.php", {
         credentials: "include"
     })
     .then(()=>{
@@ -146,7 +146,7 @@ function toggleMenu(){
 }
 
 // ================= CONTROL DE SESIÓN Y MENÚ =================
-fetch("https://blacheres-app.onrender.com/sesion.php", {
+fetch("https://sistemas-tickets.onrender.com/sesion.php", {
 credentials: "include"
 })
 .then(res => res.json())
@@ -194,7 +194,7 @@ function formatoTexto(texto){
 
 let registros = [];
    function cargarDatos(){
-     fetch("https://blacheres-app.onrender.com/lista.php", {
+     fetch("https://sistemas-tickets.onrender.com/lista.php", {
         credentials: "include"
     })
     .then(res => res.json())
@@ -304,7 +304,7 @@ function eliminarPorFecha(){
             return;
         }
 
-        fetch("https://blacheres-app.onrender.com/eliminar_por_fecha.php", {
+        fetch("https://sistemas-tickets.onrender.com/eliminar_por_fecha.php", {
             credentials: "include",
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -429,7 +429,7 @@ function guardarCambio(i, campo, valor){
         observacion_general: registros[i].observacion_general || ""
     };
 
-    fetch("https://blacheres-app.onrender.com/update.php", {
+    fetch("https://sistemas-tickets.onrender.com/update.php", {
         credentials: "include",
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -445,7 +445,7 @@ function eliminar(i){
     let id = registros[i].id;
     mostrarConfirm("¿Eliminar registro?", (ok)=>{
         if(!ok) return;
-        fetch("https://blacheres-app.onrender.com/eliminar.php", {
+        fetch("https://sistemas-tickets.onrender.com/eliminar.php", {
             credentials: "include",
             method: "POST",
             headers: { "Content-Type": "application/json" },
