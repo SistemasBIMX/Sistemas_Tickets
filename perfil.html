@@ -85,7 +85,7 @@ function toggleMenu(){
 let editando = false;
 
 window.onload = function(){
-    fetch("https://blacheres-app.onrender.com/usuarios.php", {
+    fetch("https://sistemas-tickets.onrender.com/usuarios.php", {
         credentials: "include",
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -134,7 +134,7 @@ function editarUsuario(){
             return;
         }
 
-        fetch("https://blacheres-app.onrender.com/usuarios.php", {
+        fetch("https://sistemas-tickets.onrender.com/usuarios.php", {
             credentials: "include",
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -172,7 +172,7 @@ function editarPassword(){
             mensajes.innerText = "❌ Contraseña vacía";
             return;
         }
-        fetch("https://blacheres-app.onrender.com/usuarios.php", {
+        fetch("https://sistemas-tickets.onrender.com/usuarios.php", {
             credentials: "include",
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -221,7 +221,7 @@ function editar(){
             return;
         }
 
-        fetch("https://blacheres-app.onrender.com/usuarios.php", {
+        fetch("https://sistemas-tickets.onrender.com/usuarios.php", {
             credentials: "include",
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -264,7 +264,7 @@ function cerrarLogout(){
     document.getElementById("logoutModal").style.display = "none";
 }
 function confirmarLogout(){
-    fetch("https://blacheres-app.onrender.com/logout.php", {
+    fetch("https://sistemas-tickets.onrender.com/logout.php", {
         credentials: "include"
     })
     .then(res => res.text())
@@ -283,7 +283,7 @@ function confirmarLogout(){
 }
 
 // ================= CONTROL DE SESIÓN Y MENÚ =================
-fetch("https://blacheres-app.onrender.com/sesion.php", {
+fetch("https://sistemas-tickets.onrender.com/sesion.php", {
     credentials: "include"
 })
 .then(res => res.json())
