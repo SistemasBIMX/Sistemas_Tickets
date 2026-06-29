@@ -42,7 +42,7 @@ function guardar(){
 
     inputObs.value = observaciones;
 
-    fetch("https://blacheres-app.onrender.com/sesion.php", {
+    fetch("https://sistemas-tickets.onrender.com/sesion.php", {
     credentials: "include"
     })
     .then(res => res.json())
@@ -61,7 +61,7 @@ function guardar(){
 }
 
 function enviarDatos(solicitante, urgencia, origen, observaciones, boton, mensaje){
-    fetch("https://blacheres-app.onrender.com/guardar.php", {
+    fetch("https://sistemas-tickets.onrender.com/guardar.php", {
         credentials: "include",
         method: "POST",
         headers: {"Content-Type":"application/json"},
@@ -108,7 +108,7 @@ function enviarDatos(solicitante, urgencia, origen, observaciones, boton, mensaj
 
 //  VERIFICAR SESIÓN
 function verificarSesion(){
-    fetch("https://blacheres-app.onrender.com/sesion.php", {
+    fetch("https://sistemas-tickets.onrender.com/sesion.php", {
     credentials: "include"
     })
     .then(res => res.json())
@@ -122,7 +122,7 @@ function verificarSesion(){
         console.log("Error verificando sesión");
     });
 }
-fetch("https://blacheres-app.onrender.com/sesion.php", {
+fetch("https://sistemas-tickets.onrender.com/sesion.php", {
     credentials: "include"
 })
 .then(res => res.json())
@@ -166,7 +166,7 @@ function cerrarLogout(){
     document.getElementById("logoutModal").style.display = "none";
 }
 function confirmarLogout(){
-    fetch("https://blacheres-app.onrender.com/logout.php", {
+    fetch("https://sistemas-tickets.onrender.com/logout.php", {
         credentials: "include"
     })
     .then(()=>{
@@ -199,7 +199,7 @@ function limpiarFormulario(){
 
 function cargarUsuario(){
     const input = document.getElementById("solicitante1");
-    fetch("https://blacheres-app.onrender.com/sesion.php", {
+    fetch("https://sistemas-tickets.onrender.com/sesion.php", {
         credentials: "include"
     })
     .then(res => res.json())
