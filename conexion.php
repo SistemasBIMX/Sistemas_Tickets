@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 date_default_timezone_set('America/Mexico_City');
 
 $conn = pg_connect("
-aws-1-us-west-2.pooler.supabase.com
+host=aws-1-us-west-2.pooler.supabase.com
 port=5432
 dbname=postgres
 user=postgres.siwwnucxfjurzkezotlg
