@@ -9,16 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 session_start();
 header('Content-Type: application/json');
 
-if(
-    !isset($_SESSION["tipo"]) ||
-    $_SESSION["tipo"] !== "admin"
-){
-    echo json_encode([
-        "error" => "SIN_PERMISOS"
-    ]);
-    exit;
-}
-
 include "../conexion.php";
 if (!$conn) {
     echo json_encode(["error" => "conexion"]);
@@ -39,6 +29,14 @@ if(!$data || !isset($data["accion"])){
     exit;
 }
 $accion = $data["accion"];
+
+if(in_array($accion, ["eliminar", "editar"])){
+    if(!isset($_SESSION["tipo"]) || $_SESSION["tipo"] !== "admin"){
+        echo json_encode(["error" => "SIN_PERMISOS"]);
+        exit;
+    }
+}
+
 // ================= LOGIN =================
 if($accion == "login"){
     $usuario = $data["usuario"] ?? "";
